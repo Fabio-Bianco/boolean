@@ -17,6 +17,8 @@ echo "Ciao, sono un file PHP!";
 
 echo "<br>";    
 
+$name = "Fabio";
+echo "Il mio nome è $name";
 
 ?>
     
