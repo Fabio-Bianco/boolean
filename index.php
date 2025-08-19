@@ -14,11 +14,16 @@
 <?php 
 
 echo "Ciao, sono un file PHP!";
-
-echo "<br>";    
-
+  
 $name = "Fabio";
-echo "Il mio nome è " . $name;
+
+$eta = 35;
+
+echo "<br>";  
+echo "<br>";  
+echo "Il mio nome è " . $name .  " e ho " . $eta . " anni." ;
+
+$eta = 35
 
 ?>
     
