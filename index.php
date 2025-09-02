@@ -66,6 +66,38 @@ var_export($numbers);
 echo "</pre>";
 
 ?>
-    
+
+<hr>
+<h2>LE FUNZIONI IN PHP</h2>
+<hr>    
+
+<?php 
+
+// funzione che somma due numeri passati come argomenti
+
+function somma ($num1,  $num2) {
+
+    return  $num1 + $num2;
+}
+
+?>
+
+<p>La somma di 5 e 10 è: <?php echo somma(5, 10); ?></p>
+
+
+<hr>
+<h2>FUNZIONE PER SALUTARE IN PHP </h2>
+<hr>
+
+<?php 
+
+function saluta ($username = "Ospite") {
+
+    return "Ciao " . $username . ", benvenuto nel mio sito!";
+}
+
+echo saluta()
+
+?>
 </body>
 </html>
