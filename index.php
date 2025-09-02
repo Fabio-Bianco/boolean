@@ -91,13 +91,17 @@ function somma ($num1,  $num2) {
 
 <?php 
 
-function saluta ($username = "Ospite") {
+function saluta (string $username = "Ospite") {
 
-    return "Ciao " . $username . ", benvenuto nel mio sito!";
+    return "Ciao " . $username  . ", benvenuto nel mio sito!";
 }
 
-echo saluta()
+echo saluta("Vercingetorige")
+
+
 
 ?>
+
+
 </body>
 </html>
