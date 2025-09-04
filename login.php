@@ -1,44 +1,44 @@
 <?php 
-
 session_start();
 
-// SE LìUTENTE è LOGGATO, LO REDIRIGO AL PROFILO
 if (isset($_SESSION['username'])) {
     header('Location: profilo.php');
     exit(); 
 }
 
-//SIMULAZIONE LOGIN
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $username = $_POST['username'];
-    $_SESSION['username'] = $username;
-    header('Location: profilo.php');    
-    exit();
-} else {
-    echo $errore = "Effettua il login per accedere al profilo.";
+    $username = trim($_POST['username']);
+
+    if (!empty($username)) {
+        $_SESSION['username'] = $username;
+        header('Location: profilo.php');    
+        exit();
+    } else {
+        $errore = "Inserisci un nome valido.";
+    }
 }
-
-
 ?>
 
-
 <!DOCTYPE html>
-<html lang="en">
+<html lang="it">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LOGIN</title>
+    <title>Login</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<?php if (isset($errore)) echo "<p style='color:red;'>$errore</p>"; ?>
-    
+<div class="container">
+    <h1>Login</h1>
+
+    <?php if (isset($errore)) echo "<p class='error'>$errore</p>"; ?>
+
     <form method="POST">
-
-    Inserisci il tuo nome: <input type="text" name="username" required>
-    <button type="submit">Login</button>
-
+        <input type="text" name="username" placeholder="Inserisci il tuo nome" required>
+        <br>
+        <button type="submit">Login</button>
     </form>
+</div>
 
 </body>
 </html>
